@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://use.fontawesome.com/31aeab9e7f.js"></script>
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="container">
+        <div class="task" id="divTask"><label id="labelTask">Mensaje</label></div>
+        <div class="section" id="section1">
+            
+            <input id="inputNombre" type="text" name=""  placeholder="Ingrese su nombre">
+            <input id="inputApellido" type="text" name=""  placeholder="Ingrese su apellido">
+            <div id="contentButton"><button id="buttonIniciar" onclick="iniciarTest()">Iniciar Test</button> </div>
+            
+        </div>
+        <div class="section" id="section2">
+            <div class="listQuiestions">
+                <a id="a0" onclick="redirigir(0)">1</a>
+                <a id="a1" onclick="redirigir(1)">2</a>
+                <a id="a2" onclick="redirigir(2)">3</a>
+                <a id="a3" onclick="redirigir(3)">4</a>
+                <a id="a4" onclick="redirigir(4)">5</a>
+                <a id="a5" onclick="redirigir(5)">6</a>
+                <a id="a6" onclick="redirigir(6)">7</a>
+                <a id="a7" onclick="redirigir(7)">8</a>
+                <a id="a8" onclick="redirigir(8)">9</a>
+                <a id="a9" onclick="redirigir(9)">10</a>
+            </div>
+            <div class="numQuestion">
+                <label id="labelIndicador">Pregunta 0 de 0</label>
+            </div>
+            <div class="Question">
+                <p id="pregunta">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae esse autem ea iusto libero, vitae aliquam aut minima ipsam, pariatur saepe sit laborum rerum perferendis natus quia deserunt impedit. In.</p>
+                <div class="respuestas">
+                    <input class="check"  id="check1" type="checkbox"  onclick="check1Onclick()">
+                    <label for="check1" id="labelop1">respuesta</label>
+                </div>
+                <div class="respuestas">
+                    <input  class="check" id="check2" type="checkbox"  onclick="check2Onclick()">
+                    <label for="check2" id="labelop2">respuesta</label>
+                </div>
+                <div class="respuestas">
+                    <input  class="check" id="check3" type="checkbox"  onclick="check3Onclick()">
+                    <label for="check3" id="labelop3">respuesta</label>
+                </div>
+            </div>
+            <div class="backNext">
+                <button id="btnBack" ><i class="fa fa-chevron-circle-left" id="iconbtnBack" onclick="back()"></i></button>
+                <button id="btnNext"><i class="fa fa-chevron-circle-right" id="iconbtnNext" onclick="nextClick()"></i></button>
+            </div>
+            
+            <div class="progressBar">
+                <div class="progressBarContent" id="progressBarContent">0</div>
+                
+            </div>
+        </div>
+                       
+                
+        
+        
+        
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
