@@ -208,7 +208,7 @@ function next(boolea) {
       }
     }
 
-    console.log(usuario);
+    
   }
 }
 function capCheck() {
@@ -256,8 +256,8 @@ function actPB(){
             ax=ax+1;
         }
     }
-    progressBarContent.textContent = `${10-ax}`;
-    progressBarContent.style.width = `${(10-ax) * 10}%`;
+    progressBarContent.textContent = `${9-ax}`;
+    progressBarContent.style.width = `${(9-ax) * 10}%`;
 }
 function back(){
     if((contPres)===1){
@@ -273,7 +273,7 @@ function loadResult(){
     let cont =0;
     let aprText = 'No has Aprobado'
     for(let i=0; i<10;i++){
-        if(preguntas[i].pregunta==usuario.res[i]){
+        if(preguntas[i].correcta===usuario.res[i]){
                 cont =  cont+1;
         }
     }
