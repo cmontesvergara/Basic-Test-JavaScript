@@ -1,6 +1,7 @@
 const section1 = document.getElementById("section1");
 const section2 = document.getElementById("section2");
 const section3 = document.getElementById("section3");
+const container = document.getElementById("container");
 const inputNombre = document.getElementById("inputNombre");
 const inputApellido = document.getElementById("inputApellido");
 const divTask = document.getElementById("divTask");
@@ -42,16 +43,16 @@ const preguntas = [
     op1: "rio nilo",
     op2: "rio amazonas",
     op3: "rio danubio",
-    correcta: "check2",
+    correcta: "rio amazonas",
   },
 
   {
     indice: 2,
     pregunta: "Cual es el oceano mas grande del mundo",
-    op1: "Oceano pasifico",
+    op1: "Oceano pacifico",
     op2: "Oceano indico",
     op3: "Oceano atlantico",
-    correcta: "check1",
+    correcta: "Oceano pacifico",
   },
 
   {
@@ -60,7 +61,7 @@ const preguntas = [
     op1: "China",
     op2: "Rusia",
     op3: "India",
-    correcta: "check2",
+    correcta: "Rusia",
   },
 
   {
@@ -69,7 +70,7 @@ const preguntas = [
     op1: "China",
     op2: "Rusia",
     op3: "Estados unidos",
-    correcta: "check1",
+    correcta: "China",
   },
 
   {
@@ -78,7 +79,7 @@ const preguntas = [
     op1: "Santiago",
     op2: "Brasilia",
     op3: "Managua",
-    correcta: "check3",
+    correcta: "Managua",
   },
 
   {
@@ -87,7 +88,7 @@ const preguntas = [
     op1: "Andorra",
     op2: "Monaco",
     op3: "El Vaticano",
-    correcta: "check3",
+    correcta: "El Vaticano",
   },
 
   {
@@ -96,7 +97,7 @@ const preguntas = [
     op1: "Moscu",
     op2: "Estanbul",
     op3: "Berlin",
-    correcta: "check2",
+    correcta: "Estanbul",
   },
 
   {
@@ -105,7 +106,7 @@ const preguntas = [
     op1: "1945",
     op2: "1947",
     op3: "1943",
-    correcta: "check1",
+    correcta: "1945",
   },
 
   {
@@ -114,7 +115,7 @@ const preguntas = [
     op1: "Rusia",
     op2: "Estados unidos",
     op3: "Japon",
-    correcta: "check3",
+    correcta: "Japon",
   },
 
   {
@@ -123,7 +124,7 @@ const preguntas = [
     op1: "Homero",
     op2: "Virgilio",
     op3: "Cervantes",
-    correcta: "check1",
+    correcta: "Homero",
   },
 ];
 
@@ -200,8 +201,10 @@ function next(boolea) {
       }
       
       
-      if (progressBarContent.textContent == "10") {
-        task("red", "ya van 10");
+      if (usuario.res[9] !== "") {
+            section2.style.display='none';
+            section3.style.display='grid';
+            loadResult();
       }
     }
 
@@ -224,6 +227,7 @@ function capCheck() {
         
         usuario.res[`${contador}`] = labelop1.textContent;
         valiu = true;
+        
       } else if (check2.checked === true) {
         
         usuario.res[`${contador}`] = labelop2.textContent;
@@ -260,6 +264,35 @@ function back(){
         task('','Esta es la primera pregunta, no puedes retroceder mas')
     }else{
         redirigir(contPres-2);
+    }
+    
+}
+function loadResult(){
+    container.style.height='100%';
+    
+    let cont =0;
+    let aprText = 'No has Aprobado'
+    for(let i=0; i<10;i++){
+        if(preguntas[i].pregunta==usuario.res[i]){
+                cont =  cont+1;
+        }
+    }
+    if(aprText>5){aprText='Has Aprobado'}
+    section3.insertAdjacentHTML("afterbegin",`<label id='labelNUser'>${usuario.nombre} ${usuario.apellido} ${aprText}</label>`);
+    for(let i=0; i<10;i++){
+        
+        section3.insertAdjacentHTML("afterbegin",`
+        <div>
+            <label id='labelPreguntaUser'>${preguntas[i].pregunta}</label>
+            <label id='label1User'>Respuesta Seleccionada: </label>
+            <label id='labelR1User'>${usuario.res[i]}</label>
+            <label id='label2User'>Respuesta Correcta: </label>
+            <label id='labelR2User'>${preguntas[i].correcta}</label>
+
+
+        </div>
+        `);
+        
     }
     
 }

@@ -10,7 +10,7 @@ body{
     grid-template-columns: auto auto auto;
     grid-template-rows: auto auto auto auto;
     box-sizing: border-box;
-    height: 100vh;
+    height:100vh;
     width: 100vw;
     margin: 0px;
     padding: 30px;
@@ -244,4 +244,54 @@ a:hover{
 }
 #pregunta{
     min-width: 80vw;
+}
+#section3{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+#labelNUser{
+    border-top: 10px;
+    border-bottom: 20px;
+    display: block;
+    color: #ff6732;
+    font-size: x-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+#labelR1User{
+    width: 20vw;
+    display: inline-flex;
+    color: #27a6e0;
+    font-size: small;
+}
+#labelR2User{
+    
+    display: inline-flex;
+    color: #89c96b;
+    font-size: small;
+    text-align: start;
+}
+#label1User{
+    
+    display: inline-block;
+    color: #ffffff;
+    font-size: medium;
+    text-align: start;
+}
+#label2User{
+    width: 20vw;
+    display: inline-block;
+    color: #ffffff;
+    font-size: medium;
+    text-align: start;
+    
+}
+#labelPreguntaUser{
+    display: block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ddca73;
+    font-size: large;
+    text-align: start;
 }
