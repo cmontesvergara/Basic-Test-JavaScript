@@ -120,7 +120,7 @@ const preguntas = [
 
   {
     indice: 10,
-    pregunta: "¿Quien escribio la audisea?",
+    pregunta: "¿Quien escribio la Odisea?",
     op1: "Homero",
     op2: "Virgilio",
     op3: "Cervantes",
@@ -277,7 +277,7 @@ function loadResult(){
                 cont =  cont+1;
         }
     }
-    if(aprText>5){aprText='Has Aprobado'}
+    if(cont>5){aprText='Has Aprobado'}
     section3.insertAdjacentHTML("afterbegin",`<label id='labelNUser'>${usuario.nombre} ${usuario.apellido} ${aprText}</label>`);
     for(let i=0; i<10;i++){
         
