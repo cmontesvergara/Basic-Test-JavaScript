@@ -1,5 +1,5 @@
 # practicaJs2 - Test on JavaScript
-this is the practic number 2 of the course develop web
+this is the practic number 2 of the course develop web, Test Web https://exultant-vaulted-bacon.glitch.me/
 # Wireframe One
 ![wireframe one](/public/img/wf1.png)
 
